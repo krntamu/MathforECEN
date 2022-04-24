@@ -1,0 +1,65 @@
+\documentclass[%
+% border=1pt
+  border={0pt 0pt 0pt 0pt} % left bottom right top
+]{standalone}
+\usepackage{tikz} % Required for drawing custom shapes
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+
+\usepackage{amsbsy}
+\usetikzlibrary{decorations.pathreplacing,calc}
+\usetikzlibrary{shapes}
+\usepackage{amsmath,stackrel}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{math}
+
+\begin{document}
+\tikz{
+%\begin{axis}[]
+	\begin{axis}[enlarge x limits=0,
+		enlarge y limits=0.13,
+			xlabel={$t$},
+		ylabel={$\Re \left\{x(t)\right\}$},
+			width = 0.7\textwidth,
+		height = 0.3\textwidth, ]
+	\addplot[trig format =rad,black,domain=0:5,samples=200,thick]{exp(-x)*cos(2*pi*x)};
+    \addplot[trig format =rad,blue,dotted,domain=0:5,samples=200,thick]{exp(-x)};
+\end{axis}
+
+	\begin{axis}[enlarge x limits=0,
+		enlarge y limits=0.13,xshift=9cm,
+			xlabel={$t$},
+		ylabel={$\Im \left\{x(t)\right\}$},width = 0.7\textwidth,
+		height = 0.3\textwidth,]
+	\addplot[trig format =rad,black,domain=0:5,samples=200,thick]{exp(-x)*sin(2*pi*x)};
+    \addplot[trig format =rad,blue,dotted,domain=0:5,samples=200,thick]{exp(-x)};
+\end{axis}
+
+
+\begin{axis}[enlargelimits=false,
+	xshift=0cm,yshift=-3.5cm,ymin=0, ymax=1.5,
+		xlabel={$t$},
+	ylabel={$|x(t)|$},
+	width = 0.7\textwidth,
+	height = 0.3\textwidth,]
+\addplot[trig format =rad,black,domain=0:5,samples=200,thick]{exp(-x)}; % plot of magnitude of figure 1.4
+
+\end{axis}
+
+\begin{axis}[enlarge x limits=0,
+	enlarge y limits=0.13,xshift=9cm,yshift=-3.5cm,
+	xlabel={$t$},
+	ylabel={$\angle x(t)$},
+	width = 0.7\textwidth,
+	height = 0.3\textwidth,
+	]
+	%\addplot[trig format =rad,black,domain=0:5,samples=2000,thick]{atan((tan(2*pi*x))}; % plot of angle of x of figure 1.4
+	\addplot[black,thick]
+    table[col sep=comma]{Data_0_4.csv}; % plot of angle of x of figure 1.4
+	
+\end{axis}
+
+}
+\end{document}

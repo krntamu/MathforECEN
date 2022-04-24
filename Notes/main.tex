@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%% Springer-Verlag  Template %%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[envcountsame,envcountchap]{svmono}
+\documentclass[11pt,openright]{book}
+\input{preamble}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\author{Krishna R. Narayanan}
+\title{Complex Numbers for Electrical \& Computer Engineering \\
+  \begin{figure}[h]\centering
+  \input{../Images/ComplexNumbers/Myunitcircle}
+  \end{figure}
+}
+\maketitle
+
+%\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{dedic}
+%\include{pref}
+
+\tableofcontents
+
+
+%\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%include{part}
+\include{Notes/ChapterComplexNumbers}
+\include{Notes/ChapterGeometricSeries}
+\includepdf[pages=-]{../Homework/Homework1/Fa21Hw1}
+\input{../Homework/Homework1/Fa21Hw1videosolutions}
+%\include{appendix}
+
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{solutions}
+%\include{referenc}
+\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document} 

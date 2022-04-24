@@ -1,0 +1,45 @@
+\documentclass[%
+% border=1pt
+  border={0pt 0pt 0pt 0pt} % left bottom right top
+]{standalone}
+\usepackage{tikz} % Required for drawing custom shapes
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+
+\usepackage{amsbsy}
+\usetikzlibrary{decorations.pathreplacing,calc}
+\usetikzlibrary{shapes}
+\usepackage{amsmath,stackrel}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{math}
+
+\begin{document}
+\tikz{
+%\begin{axis}[]
+	\begin{axis}[enlarge x limits=0,
+		enlarge y limits=0.13,
+			xlabel={$w$},
+		ylabel={$|H(jw)|$},
+			width = 0.7\textwidth,
+		height = 0.3\textwidth, ]
+	\addplot[trig format =rad,black,domain=-10:10,samples=200,thick]{abs(x)/sqrt(1+x^2)}; % plot of real part of figure1.4
+	%\addplot[black,domain=0:3,samples=200,thick]{sin(2*180*x)}; % plot of imaginary part of figure 1.4
+	%\addplot[black,domain=0:10,samples=200,thick]{sqrt((cos(2*pi*x))^2+(sin(2*pi*x))^2)}; % plot of magnitude of figure 1.4
+		%\addplot[black,domain=0:5,samples=2000,thick]{atan((tan(2*pi*x))}; % plot of angle of x of figure 1.4
+	%\addplot[black,domain=0:10,samples=200,thick]{exp{-x}};
+\end{axis}
+
+	\begin{axis}[enlarge x limits=0,
+		enlarge y limits=0.13,yshift=-3cm,
+			xlabel={$w$},
+		ylabel={$\angle H(j \omega)$},width = 0.7\textwidth,
+		height = 0.3\textwidth,]
+	\addplot[trig format =rad,black,domain=-10:10,samples=200,thick]{sign(x)*1.57-atan(x)}; % plot of imaginary part of figure 1.4
+
+\end{axis}
+
+
+}
+\end{document}

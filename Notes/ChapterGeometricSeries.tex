@@ -1,0 +1,133 @@
+\chapter{Geometric Series  - (
+\href{https://youtu.be/PorDnSVfcqc}{Video},
+\href{https://colab.research.google.com/drive/1iO7-QiDYePlRxaFbWY-plFB2ibVZd8rP?usp=sharing}{Python notebook})}
+
+A sequence of the form $a, a r, \ldots, a r^{n},\ldots $, where $a$ and $r$ can be
+ any {\em complex} number is called a geometric sequence.
+ The first term in the sequence is $a$  and the ratio of any two adjacent terms is $r$, which is called the common ratio.
+ The partial sum $S_N$ defined as
+\[
+S_N := a + a r + a r^2 + \ldots + a r^{N-1} = \sum_{n=0}^{N-1} a r^{n}
+\]
+is the sum of the first $N$ terms of the sequence and is called a geometric series.
+Notice that the sum starts at $ar^0$ and goes up to $a r^{N-1}$.
+Notice that lowercase $n$ is used as an index for the summation and uppercase $N$ is the number of terms.
+It might seem annoying as to why I used lower case $n$ and upper case $N$ to mean two different things.
+Throughout the course, we will have to sum signals which are indexed by time and it is common to use $n$ to represent a time index
+and $N$ is commonly used to refer to the number of terms.
+Therefore, it is better to get used to this notation.
+
+A nice formula for $S_N$ can be obtained as follows
+\begin{eqnarray}
+S_N  & = & a + a r + a r^2 + \ldots + a r^{N-1}  \\
+r S_N & = & \ \ \ \ \ \ a r + a r^2 + \ldots + a r^{N-1} + a r^N \\
+(1-r)S_N & = & a - a r^N = a (1-r^N)
+\end{eqnarray}
+From this, we can see that
+\begin{equation}
+\label{eqn:sumtontermsgm}
+\boxed{
+S_N = \sum_{n=0}^{N-1} a r^n = \left\{
+                       \begin{array}{ll}
+                        \frac{a(1-r^{N})}{1-r}, & \hbox{$r \neq 1$;} \\
+                        a N, & \hbox{$r = 1$.}
+                       \end{array}
+                     \right.\\
+}
+\end{equation}
+
+Using the same idea as before, the following general formula can be derived
+\begin{equation}
+\label{eqn:geomsumgeneral}
+\boxed{
+		\hbox{For} \ N_2 > N_1, \sum_{n=N_1}^{N_2} r^n  = \left\{
+                       \begin{array}{ll}
+                        \frac{r^{N_1}-r^{N_2+1}}{1-r}, & {r \neq 1;} \\
+                        N_2-N_1+1, & {r = 1.}
+                       \end{array}
+                     \right.\\
+}
+\end{equation}
+The above formula is valid for any $N_2 > N_1$ regardless of whether $N_1,N_2$ are positive, zero or negative. While the formula for the sum a geometric sequence is straight forward, students often have difficulty recollecting this from memory. You {\em must memorize} this formula~$!$
+
+The following special cases of (\ref{eqn:geomsumgeneral}) are typically encountered
+\begin{equation}
+\label{eqn:geomsp1}
+\boxed{
+		\sum_{n=0}^{N} r^n  = \left\{
+                       \begin{array}{ll}
+                        \frac{1-r^{N+1}}{1-r}, & {r \neq 1;} \\
+                        N+1, & {r = 1.}
+                       \end{array}
+                     \right.\\
+}
+\end{equation}
+
+Another special case of the above result is when $N_2 \rightarrow \infty$. In this case, the sum of infinite terms converges or diverges depending on whether $|r| < 1$ or $|r|> 1$.
+
+\begin{equation}
+\label{eqn:geomsp2}
+\boxed{
+\sum_{n=N_1}^{\infty} r^n = \left\{
+                       \begin{array}{ll}
+                        \frac{r^{N_1}}{1-r}, & \hbox{$|r| < 1$;} \\
+                        \hbox{does not converge}, & \hbox{$|r| \geq 1$.}
+                       \end{array}
+                     \right.\\
+                     }
+\end{equation}
+
+\begin{example}
+For example, $1,\frac{1}{2},\frac{1}{4},\ldots$ is an infinite geometric series with $a=1$, $b=\frac12$.
+\[
+S_{11} = 1 + \frac{1}{2}+ \frac{1}{4} + \ldots + \ldots + \frac{1}{1024} = \frac{1-\frac{1}{2^{11}}}{1-\frac12}
+\]
+\end{example}
+
+You may have seen these before, but in this class often we will be interested in the case when $a$ and/or $b$ are complex numbers. Luckily, nothing changes from when $a$ and $b$ are just real numbers.
+
+
+An additional difficulty students often face is in recognizing that a given sum is actually a sum of a geometric sequence and in properly identifying $a$ and $r$. The practice problems in this section as well as the homework problems should give you some practice.
+
+The following identity is also true, although we will not use this often in this class.
+\begin{equation}
+\label{sumgm2}
+\sum_{n=0}^\infty n r^n = \frac{r}{(1-r)^2}, \ \ \ |r| < 1
+\end{equation}
+
+\section{Practice Problems -
+(\href{http://signalsandsystems.wikidot.com/problems-geometric-series}{Video solutions})}
+
+\begin{enumerate}
+
+\item Compute $5+\frac{10}{3}+\frac{20}{9}+\frac{40}{27}+ \ldots$
+
+\item Compute $5-\frac{10}{3}+\frac{20}{9}-\frac{40}{27}+ \ldots$
+
+\item Simplify $\sum\limits_{n=2}^{9} 2^{3n} 3^{-2n}$
+
+\item Compute $\sum\limits_{n=2}^{\infty} 2^{3n} 3^{-2n}$
+
+\item Compute $\sum\limits_{n=-\infty}^{-2} 2^{-3n} 3^{2n}$. See if you can substitute $m = -n$ and obtain the expression in the previous problem
+
+\item Simply $\sum\limits_{n=2}^{\infty} x^n 3^{-n}$ an expression as a rational function of $x$. Evaluate this function for $x=2$
+
+\item Compute $\sum\limits_{n=1}^{\infty} \cos^n (\pi t)$ and express as a function of $t$
+
+\item Compute $\sum\limits_{n=1}^{\infty} \frac{1}{2^n}\cos(n \pi t)$ and express the result as a function of $t$. Hint: Use Euler's formula to convert this sum of two geometric series.
+
+\item Simplify $\sum\limits_{n=1}^{\infty} \left(\frac{1}{3} \right)^n e^{j \omega n}$
+
+\item Compute $e^{j\frac{\pi}{2}}+\frac{1}{2} e^{{j \pi}} + \frac{1}{4} e^{j\frac{3 \pi}{2}} + \ldots + \frac{1}{2^9} e^{j\frac{10 \pi}{2}}$. Simplify your answer into a complex number in Cartesian form
+
+
+
+\item Prove the result in (\ref{eqn:geomsp1}) and (\ref{eqn:geomsp2})
+\item For any two given integers $k$ and $N$, what is
+$\displaystyle{\sum_{n=0}^{N-1} e^{\frac{j 2 \pi k n}{N}}}$?
+
+\item Just for intellectual curiosity - Can you prove the results in (\ref{eqn:sumtontermsgm}) and (\ref{sumgm2})?
+
+\end{enumerate}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

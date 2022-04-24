@@ -1,0 +1,110 @@
+%\usepackage{subfiles}
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx,wrapfig}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+%\usepackage{dsptricks}
+%\usepackage{dspfunctions}
+%\usepackage{dspblocks}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc, arrows, shadows,shapes, arrows.meta, positioning, fit, decorations, intersections}
+\tikzset{sig/.style={circle, draw, fill = white, inner sep = 0, minimum size = 3pt, node contents = {}}}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{float}
+\usepackage[a4paper, total={6in, 10in},left=25mm,top=20mm,]{geometry}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{grffile}
+\usepackage{auto-pst-pdf}
+\usepackage{pst-plot}
+\usepackage[europeanresistors,europeaninductor]{circuitikz}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\definecolor{grey}{RGB}{0.5,0.5,0.5}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=red,
+    }
+%\usepackage[Glenn]{fncychap}
+\let\proof\relax
+\let\endproof\relax
+
+\newtcolorbox{warningbox}[2][]
+{
+  colframe = red!25,
+  colback  = red!10,
+  coltitle = red!20!black,
+  title    = #2,
+  #1,
+}
+
+% Hint tcolorbox
+% #1: tcolorbox options
+% #2: Box title
+\newtcolorbox{hintbox}[2][]
+{
+  colframe = green!25,
+  colback  = green!10,
+  coltitle = green!20!black,
+  title    = #2,
+  #1,
+}
+
+% Info (information) tcolorbox
+% #1: tcolorbox options
+% #2: Box title
+\newtcolorbox{infobox}[2][]
+{
+  colframe = blue!25,
+  colback  = blue!10,
+  coltitle = blue!20!black,
+  title    = #2,
+  #1,
+}
+
+%\usepackage{graphics,epsfig}
+%\usepackage{psfrag}
+\usepackage{polynom}
+\def\pgfsysdriver{pgfsys-tex4ht.def}
+\pgfplotsset{compat = newest}
+
+\newtheorem*{remark}{Remark}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+%\begin{comment}
+\newcommand{\SetIn}{\ensuremath{\mathrm{1\!1}}}
+\newcommand{\Expect}{\ensuremath{\mathrm{E}}}
+\newcommand{\Var}{\ensuremath{\mathrm{Var}}}
+
+\newcommand{\RealNumbers}{\mathbb{R}}
+\newcommand{\RationalNumbers}{\mathbb{Q}}
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\NaturalNumbers}{\mathbb{N}}
+\newcommand{\sinc}{\text{sinc}}
+\newcommand{\tri}{\text{tri}}
+\newcommand{\rect}{\text{rect}}
+
+\newif\iflecture
+\lecturefalse
+
+%% Definitions
+%%
+\renewcommand{\baselinestretch}{1.25}
+\newcommand{\defn}[2]{\textbf{\textrm{#2}}\index{#1!#2}}
+%\end{comment}
+
+\makeindex     % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+

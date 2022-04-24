@@ -1,0 +1,35 @@
+\documentclass[%
+% border=1pt
+  border={0pt 0pt 0pt 0pt} % left bottom right top
+]{standalone}
+\usepackage{tikz} % Required for drawing custom shapes
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+
+\usepackage{amsbsy}
+\usetikzlibrary{decorations.pathreplacing,calc}
+\usetikzlibrary{shapes}
+\usepackage{amsmath,stackrel}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{math}
+
+\begin{document}
+\tikz{
+%\begin{axis}[]
+	\begin{axis}[enlarge x limits=0,
+		enlarge y limits=0,
+		ytick={0,0.5,1},
+			xlabel={$t$},
+		ylabel={$x(t)$},
+			width = 0.7\textwidth,
+		height = 0.3\textwidth, ]
+	\addplot[black,domain=0:4,samples=200,thick]{exp{-x}};
+\end{axis}
+
+\node[] (A) at (4,1.7) {$x(t)=e^{-t}$};
+
+
+}
+\end{document}

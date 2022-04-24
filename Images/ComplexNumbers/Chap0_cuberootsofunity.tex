@@ -1,0 +1,27 @@
+\documentclass[%
+% border=1pt
+  border={0pt 0pt 0pt 0pt} % left bottom right top
+]{standalone}
+\usepackage{tikz}
+\usepackage{amsbsy}
+\usetikzlibrary{decorations.pathreplacing,calc}
+\usetikzlibrary{shapes}
+\usepackage{amsmath,stackrel}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{math}
+
+\begin{document}
+\tikz{
+\node[circle,draw=black,minimum size=3cm] (A) at (0,0) {};
+\draw[-{angle 60},black] (-2.2,0)--(2.2,0);
+\draw[-{angle 60},black] (0,-2.2)--(0,2.2);
+\node[circle,fill=teal,inner sep=0.03cm] at (A.0) {};
+\draw[-{angle 60},black,rotate around={0:(0,0)}] (0,0)-- node[above,xshift=1cm]{$e^{j0}$} (1.5,0);
+\node[circle,fill=teal,inner sep=0.03cm] at (A.2*180/3) {};
+\draw[-{angle 60},black,rotate around={2*180/3:(0,0)}] (0,0)--node[left,yshift=0.9cm]{$e^{j\frac{2\pi}{3}}$}(1.5,0);
+\node[circle,fill=teal,inner sep=0.03cm] at (A.4*180/3) {};
+\draw[-{angle 60},black,rotate around={4*180/3:(0,0)}] (0,0)--node[left,yshift=-1cm]{$e^{j\frac{4\pi}{3}}$}(1.5,0);
+}
+\end{document}
