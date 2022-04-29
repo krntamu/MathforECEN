@@ -4,7 +4,7 @@
 (\href{https://www.youtube.com/watch?v=cUzklzVXJwo}{Veritasium's video},
 \href{https://youtu.be/UeRNIxt8o00}{KRN's video})}
 Most students encounter complex numbers for the first time when trying to solve quadratic equations.
-The roots of the quadratic eqeation $ax^2+bx+c = 0$ are given by the famous formula $\frac{-b \pm \sqrt{b^2-4ac}}{2a}$. When $b^2-4ac < 0$, we need to take the square root of negative numbers in order to compute the roots.  
+The roots of the quadratic equation $ax^2+bx+c = 0$ are given by the famous formula $\frac{-b \pm \sqrt{b^2-4ac}}{2a}$. When $b^2-4ac < 0$, we need to take the square root of negative numbers in order to compute the roots.  
 There is a popular misconception that complex numbers were invented in order to obtain roots to such quadratic equations.
 This is inaccurate and it was the roots to cubic equations that prompted the introduction of complex numbers.
 
@@ -13,7 +13,8 @@ by understanding their history before learning about how to do arithmetic with c
 In addition to the fact that it is an interesting story, there is a lesson to learn from this history about how we use complex numbers today.
 Either of the two videos linked above is a good starting point.
 
-We will use the letter $j$ to refer to the imaginary number $\sqrt{-1}$.
+If you have prior exposure to complex numbers through a course in Mathematics, it is likely that you used the letter $i$ to represent $\sqrt{-1}$. However, in Electrical and Computer Engineering,
+it is common to use the letter $j$ to refer to the imaginary number $\sqrt{-1}$.
 Even though $j$ is not a real number, we can perform all arithmetic operations such as addition, subtraction, multiplication, division with $j$ using the algebra of real numbers keeping in mind that $j^2=-1$.
 
 \section{Cartesian Form - (\href{https://youtu.be/fUEwjQBs6FU}{Video},
@@ -123,16 +124,22 @@ which is known as Euler's identity. The famous physicist Richard Feynman called 
 ``our jewel" and ``the most remarkable formula in mathematics"
 \url{https://en.wikipedia.org/wiki/Mathematical_beauty}.
 
-\section{Polar form or Exponential form (\href{https://youtu.be/ypFkFwEQpL4}{Video})}
+\section{Polar form, Exponential form (\href{https://youtu.be/ypFkFwEQpL4}{Video}) \& Phasor notation}
 We already saw that a complex $z = x+jy$ can be written as $z = r \cos \theta + j r \sin \theta$.
+\begin{infobox}{Polar or exponential form}
 Using Euler's identities $z$ can be written as
 \begin{equation}
 \label{eqn:polar2}
 z = x +j y = r \cos \theta + j r \sin \theta = r e^{j \theta}.
 \end{equation}
-$r e^{j \theta}$ is known as the polar form or exponential form.
+$r e^{j \theta}$ is known as the polar form or exponential form. In the polar form, $\theta$ is typically specified in radians.
+\end{infobox}
 
-In summary, the same complex number $z$ can be written in Cartesian form as $x+jy$ or in polar form as $re^{j \theta}$
+\begin{infobox}{Phasor notation}
+The above complex number is also sometimes written as $r \angle \theta^{\circ}$, which is called the phasor notation. When written in phasor notation, it is common for the angle to specified in degrees. 
+\end{infobox}
+
+In summary, the same complex number $z$ can be written in Cartesian form as $x+jy$ or in polar form as $re^{j \theta}$ or in phasor notation as $r \angle \theta^{\circ}$
 and it is
 very important to be able to convert a complex number from Cartesian form to exponential form and vice versa.
 When expressing a complex number in polar form, make sure $r$ is positive.
@@ -490,6 +497,9 @@ A plot of $|X(\omega)|$ versus $\omega$ and $\angle(X(\omega))$ versus $\omega$ 
 \label{fig:Xomegaexample2}
 \end{figure}
 \end{example}
+
+\section{Phasors}
+Phasor is a portmanteau of phase vector. 
 
 \section{Plotting the magnitude and phase of $H(\omega) = e^{j a_1 \omega} + e^{j a_2 \omega}$ vs $\omega$ - (\href{https://youtu.be/Vse3mWToWc4}{Video})}
 One of the tricks that is useful to get some insight into plotting the magnitude and phase of functions of the form $H(j \omega) = e^{j a_1 \omega} + e^{j a_2 \omega}$ vs $\omega$ is to express $e^{j a_1 \omega} + e^{j a_2 \omega}$ as follows
